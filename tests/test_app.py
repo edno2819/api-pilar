@@ -1,6 +1,5 @@
 import pytest
-# Garantir que o python encontre o módulo src
-from src.__init__ import create_app
+from src import create_app
 
 app = create_app()
 
