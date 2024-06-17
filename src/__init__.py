@@ -32,6 +32,6 @@ def create_app():
     configure_logger(app)
 
     with app.app_context():
-        from . import routes  # noqa
+        from . import routes
 
     return app

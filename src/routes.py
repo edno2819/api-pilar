@@ -19,7 +19,7 @@ def vowel_count():
     """
     data = request.get_json()
     if not data or 'words' not in data or not isinstance(data['words'], list):
-        return jsonify({"error": "Invalid request format"}), 400
+        return jsonify({"error": "Invalid request format"}), 401
 
     words = data['words']
     if not all(isinstance(word, str) for word in words):
