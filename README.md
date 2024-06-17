@@ -123,15 +123,3 @@ To update the libraries requirements, run:
 ```bash
 pip freeze > requirements.txt
 ```
-
-## Contribution
-
-Feel free to fork this project, submit issues and pull requests. Contributions are always welcome.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This README.md provides a comprehensive guide to setting up, running, and contributing to your Flask API project. It includes sections for environment setup, updating libraries, running tests, linting, using Docker, and CI/CD integration.
