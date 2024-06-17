@@ -16,4 +16,5 @@ def make_cache_key():
     data = request.get_json()
     return hashlib.md5(json.dumps(data, sort_keys=True).encode('utf-8')).hexdigest()
 
+
 cache = Cache(config=cache_config)
