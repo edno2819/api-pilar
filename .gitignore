@@ -8,3 +8,7 @@ dist/
 htmlcov/
 .tox/
 docs/_build/
+todo.todo
+.pytest_cache
+.env
+logs/app.log
