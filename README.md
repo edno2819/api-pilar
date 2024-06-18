@@ -118,7 +118,7 @@ For continuous integration and deployment, you can use GitHub Actions or any oth
 
 ### If you update or install some library
 
-- To update the libraries requirements, run:
+To update the libraries requirements, run:
 
 ```bash
 pip freeze > requirements.txt
