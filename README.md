@@ -78,43 +78,25 @@ flake8 .
 To run the application using Gunicorn:
 
 ```bash
-gunicorn --bind 0.0.0.0:8080 app:app
-```
-
-## Docker Setup (Optional)
-
-To containerize the application, you can use Docker. Here is an example of a Dockerfile:
-
-```dockerfile
-# Dockerfile
-FROM python:3.12
-
-# Set the working directory
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+gunicorn --bind 0.0.0.0:8000 app:app
 ```
 
 To build and run the Docker container:
 
 ```bash
-	docker build -t template-api:v1 .
-	docker run -p 8080:8080 --env-file .env template-api:v1
+docker build -t template-api:v1 .
+docker run -p 8000:8000 --env-file .env template-api:v1
 ```
 
 ## CI/CD Integration
 
-For continuous integration and deployment, you can use GitHub Actions or any other CI/CD tool.
+For continuous integration and deployment, we utilize GitHub Actions. Our setup includes refreshing the AWS ECR image and triggering AWS App Runner to refresh its service source.
+
+### Variables that need to be set in GitHub Secrets:
+- AWS_ACCESS_KEY_ID
+- AWS_ACCOUNT_ID
+- AWS_REGION
+- AWS_SECRET_ACCESS_KEY
 
 ### If you update or install some library
 
