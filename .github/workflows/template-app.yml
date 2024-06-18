@@ -28,7 +28,7 @@ jobs:
         flake8 .
       continue-on-error: true
 
-  build:
+  pytest:
     runs-on: ubuntu-latest
     needs: lint
     steps:
