@@ -3,6 +3,12 @@ from .utils import vowal
 from .cache import cache, make_cache_key
 
 
+@app.route('/', methods=['GET'])
+def hellou():
+    result = {"msg": "Hellou world!"}
+    return jsonify(result)
+
+
 @app.route('/vowel_count', methods=['POST'])
 @cache.cached(timeout=60, key_prefix=make_cache_key)
 def vowel_count():
